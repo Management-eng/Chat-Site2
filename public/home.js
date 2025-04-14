@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="placeholder-content">
             <i class="fas fa-home fa-3x"></i>
             <h3>Home Dashboard</h3>
-            <p>This is your personal dashboard. View your account information and settings here.</p>
+            <p>On behalf of the entire club, I want to express our sincere gratitude for your unwavering support. Your passion and loyalty are the heart of our team, and we are incredibly excited to have you by our side as we embark on this season. We are committed to giving our all on the pitch and making you proud. We hope you will continue to cheer us on and enjoy the exciting matches ahead. Let's make this season a memorable one together!".</p>
           </div>
         `
         break
