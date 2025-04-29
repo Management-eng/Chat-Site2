@@ -1,64 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home - Hollywood management</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hollywood Fans Chat</title>
   <link rel="stylesheet" href="home.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="home-body">
-  <div class="background">
-    <div class="shape"></div>
-    <div class="shape"></div>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Hollywood Hub</h2>
+    <a href="#">Home</a>
+    <a href="#">Actors</a>
+    <a href="#">Upcoming Movies</a>
+    <a href="#">Fan Clubs</a>
+    <a href="#">Live Chat</a>
   </div>
-  
-  <div class="home-container">
-    <header class="home-header">
-      <div class="logo-small">
-        <div class="logo-circle-small">
-          <i class="fas fa-lock"></i>
-        </div>
-        <h1>Hollywood Management</h1>
+
+  <!-- Main Content -->
+  <div class="main">
+    <div class="header">
+      <h1>Welcome, Hollywood Fans!</h1>
+    </div>
+
+    <!-- Live Stats -->
+    <div class="stats-bar">
+      <div class="stat-item">
+        <span class="stat-label">Fans Online:</span>
+        <span class="counter" id="userCount">1,000</span>
       </div>
-      <div class="user-info">
-        <span id="welcome-message">Welcome, User!</span>
-      </div>
-    </header>
-    
-    <main class="home-content">
-      <div class="content-area" id="content-area">
-        <!-- Content will be loaded here -->
-        <div class="placeholder-content">
-          <i class="fas fa-home"></i>
-          <h3>Home Dashboard</h3>
-          <p>This is your personal dashboard. Select an option from the navigation below to get started.</p>
-        </div>
-      </div>
-    </main>
-    
-    <nav class="bottom-nav">
-      <a href="#" class="nav-item active" data-page="home">
-        <i class="fas fa-home"></i>
-        <span>Home</span>
-      </a>
-      <a href="#" class="nav-item" data-page="chat">
-        <i class="fas fa-comments"></i>
-        <span>Chat</span>
-      </a>
-      <a href="#" class="nav-item" data-page="profile">
-        <i class="fas fa-user"></i>
-        <span>Profile</span>
-      </a>
-      <a href="#" class="nav-item" data-page="settings">
-        <i class="fas fa-cog"></i>
-        <span>Settings</span>
-      </a>
-    </nav>
+    </div>
+
+    <!-- Chat Area -->
+    <div class="chat-container" id="chat"></div>
+
+    <div class="input-container">
+      <input type="text" id="userInput" placeholder="Type your message..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
   </div>
-  
-  <script src="home.js"></script>
+
+  <script>
+    // Simulated live user counter
+    let userCount = 1000;
+    function updateUserCount() {
+      const inc = Math.floor(Math.random() * 5) + 1;
+      userCount += inc;
+      document.getElementById("userCount").textContent = userCount.toLocaleString();
+    }
+    setInterval(updateUserCount, 3000);
+
+    // Simple Chat Simulation
+    function sendMessage() {
+      const input = document.getElementById("userInput");
+      const message = input.value.trim();
+      if (message) {
+        appendMessage("user", message);
+        input.value = "";
+        setTimeout(() => {
+          appendMessage("bot", "Thanks for sharing your thoughts about Hollywood!");
+        }, 600);
+      }
+    }
+
+    function appendMessage(sender, text) {
+      const chat = document.getElementById("chat");
+      const msg = document.createElement("div");
+      msg.className = "message " + sender;
+      msg.textContent = text;
+      chat.appendChild(msg);
+      chat.scrollTop = chat.scrollHeight;
+    }
+  </script>
+
 </body>
 </html>
-
