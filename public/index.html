@@ -1,58 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - Hollywood Management</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hollywood Fans Chat</title>
+  <link rel="stylesheet" href="home.css">
+  <style>
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+      .main {
+        padding: 10px;
+      }
+      .celebrity-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      .celebrity-card img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .celebrity-section, .leaderboard {
+      margin: 20px;
+    }
+
+    .celebrity-card {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      background-color: #fdfdfd;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .celebrity-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+
+    .leaderboard ol {
+      padding-left: 20px;
+    }
+
+    .leaderboard li {
+      margin: 5px 0;
+    }
+  </style>
 </head>
 <body>
-  <div class="background">
-    <div class="shape"></div>
-    <div class="shape"></div>
+
+  <div class="sidebar">
+    <h2>Hollywood Hub</h2>
+    <a href="#">Home</a>
+    <a href="home.html">Live Chat</a>
+    <a href="#">Actors</a>
+    <a href="#">Upcoming Movies</a>
+    <a href="#">Fan Clubs</a>
   </div>
-  
-  <div class="container">
-    <div class="card">
-      <div class="logo">
-        <div class="logo-circle">
-          <i class="fas fa-lock"></i>
-        </div>
-        <h1>Hollywood Management</h1>
-      </div>
-      
-      <div class="form-header">
-        <h2><i class="fas fa-sign-in-alt"></i> Login</h2>
-        <p>Don't have an account? <a href="signup.html">Sign up</a></p>
-      </div>
-      
-      <div class="form-section">
-        <form id="login-form">
-          <div class="input-group">
-            <input type="text" id="login-username" placeholder=" ">
-            <label for="login-username">Username or Email</label>
-            <i class="fas fa-user"></i>
-          </div>
-          
-          <div class="input-group">
-            <input type="password" id="login-password" placeholder=" ">
-            <label for="login-password">Password</label>
-            <i class="fas fa-lock"></i>
-          </div>
-          
-          <button type="submit" class="btn-submit">
-            <span class="btn-text">Login</span>
-            <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
-          </button>
-          
-          <div id="login-message" class="message"></div>
-        </form>
+
+  <div class="main">
+    <div class="header">
+      <h1>Welcome to Hollywood Fans Chat</h1>
+      <p>Connect, discuss, and celebrate your favorite stars!</p>
+    </div>
+
+    <div class="stats-bar">
+      <div class="stat-item">
+        <span class="stat-label">Fans Online:</span>
+        <span class="counter" id="userCount">1,000</span>
       </div>
     </div>
+
+    <div class="celebrity-section">
+      <h2>Featured Celebrities</h2>
+      <div class="celebrity-card">
+        <img src="https://via.placeholder.com/100" alt="Celebrity 1">
+        <div>
+          <h3>Morgan Wallen</h3></h3>
+          <p>Starring in the upcoming sci-fi blockbuster!</p>
+        </div>
+      </div>
+      <div class="celebrity-card">
+        <img src="https://via.placeholder.com/100" alt="Celebrity 2">
+        <div>
+          <h3>Matt Rife</h3>
+          <p>Back in action in the new Thor spinoff.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="leaderboard">
+      <h2>Top Fans This Week</h2>
+      <ol>
+        <li>@StarFan99 – 320 points</li>
+        <li>@MovieBuffLA – 285 points</li>
+        <li>@RedCarpetQueen – 270 points</li>
+      </ol>
+    </div>
+
+    <div style="padding: 20px;">
+      <a href="home.html" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #2c3e50; color: white; text-decoration: none; border-radius: 5px;">
+        Join the Live Chat
+      </a>
+    </div>
   </div>
-  
-  <script src="login.js"></script>
+
+  <script src="home.js"></script>
 </body>
 </html>
-
